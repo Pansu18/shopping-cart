@@ -1,6 +1,6 @@
 export const cartInitialValue = [];
 
-export const CartReducer = (
+export const CartReducers = (
   state = cartInitialValue,
   { type, payload },
 ) => {

@@ -1,4 +1,4 @@
-import { CartReducer } from '../cartReducers';
+import { CartReducers } from '../cartReducers';
 
 describe('Cart Reducer', () => {
   const data = [
@@ -17,7 +17,7 @@ describe('Cart Reducer', () => {
 
   test('LOAD_CART_SUCCESS', () => {
     expect(
-      CartReducer(undefined, {
+      CartReducers(undefined, {
         type: 'LOAD_CART_SUCCESS',
         payload: data,
       }),
@@ -26,7 +26,7 @@ describe('Cart Reducer', () => {
 
   test('ADD_CART_SUCCESS', () => {
     expect(
-      CartReducer(data, {
+      CartReducers(data, {
         type: 'ADD_CART_SUCCESS',
         payload: item,
       }),
@@ -35,7 +35,7 @@ describe('Cart Reducer', () => {
 
   test('UPDATE_CART_SUCCESS', () => {
     expect(
-      CartReducer([...data, item], {
+      CartReducers([...data, item], {
         type: 'UPDATE_CART_SUCCESS',
         payload: { ...item, quantity: 2 },
       }),
@@ -47,7 +47,7 @@ describe('Cart Reducer', () => {
 
   test('DELETE_CART_SUCCESS', () => {
     expect(
-      CartReducer([...data, item], {
+      CartReducers([...data, item], {
         type: 'DELETE_CART_SUCCESS',
         payload: item,
       }),
@@ -56,7 +56,7 @@ describe('Cart Reducer', () => {
 
   test('RANDOM_TYPE', () => {
     expect(
-      CartReducer(data, { type: 'RANDOM_TYPE' }),
+      CartReducers(data, { type: 'RANDOM_TYPE' }),
     ).toEqual(data);
   });
 });

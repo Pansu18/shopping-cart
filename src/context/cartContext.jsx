@@ -6,8 +6,9 @@ import React, {
   useReducer,
 } from 'react';
 import PropTypes from 'prop-types';
-import cartReducer, {
+import {
   cartInitialValue,
+  CartReducers,
 } from '../reducers/cartReducers';
 import useApiRequest from '../hooks/useApiRequest';
 import { useErrorContext } from './errorContext';
@@ -17,7 +18,7 @@ export const CartContext = createContext();
 
 export function CartProvider({ children }) {
   const [cart, dispatch] = useReducer(
-    cartReducer,
+    CartReducers,
     cartInitialValue,
   );
   const { dispatchErrors } = useErrorContext();
